@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React, {Component} from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Navbar from "./components/nav-bar"; 
+import Events from "./components/Events";
+import Profile from "./components/Profile";
+import Loading from './components/loading';
+import { useAuth0 } from "@auth0/auth0-react";
+function App()
+{
+  const {isAuthenticated, isLoading} = useAuth0();
+  if(isLoading)
+  {
+    return <Loading></Loading>;
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <Router>
+      <div className = "App">
+        <Navbar/>
+        <br/>
+        <Route path='/events' component={Events} />
+        <Route path='/profile' component={Profile} />
+      </div>
+    </Router>
+  ); 
+}; 
 
 export default App;
