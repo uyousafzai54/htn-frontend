@@ -1,11 +1,12 @@
 import React from 'react'
+import './events.css';
 
     const Event = ({event}) => {
       return (
         <div>
             <div class="card border-dark mb-3 " styles = "width: 5rem;">
             {/*event.speakers.length > 0 && 
-              <!-- <img class="card-img-top" src={event.speakers[0].profile_pic} ></img> -->
+              <img className = "pfp" src={event.speakers[0].profile_pic} ></img> 
             */}
             <div class="card-body">
               <h5 class="card-title">{event.name}</h5>

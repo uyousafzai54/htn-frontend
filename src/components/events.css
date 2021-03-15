@@ -23,3 +23,9 @@
   .card {
     text-align: left;
   }
+  .pfp
+{
+  border-radius: 50%;
+  max-height: 10%;
+  max-width: 10%;
+  }
