@@ -11,8 +11,8 @@ const NavBar = () => {
         <a class="navbar-brand" href={url}>Hack the North</a>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-      <a class="nav-item nav-link" href={`${url}/events`}>Events</a>
-      <a class="nav-item nav-link" href={`${url}/profile`}>Profile</a>
+      <a class="nav-item nav-link" href={`${url}events`}>Events</a>
+      <a class="nav-item nav-link" href={`${url}profile`}>Profile</a>
     </div>
   </div>
     <AuthNav />
