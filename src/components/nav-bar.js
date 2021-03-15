@@ -4,7 +4,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import AuthNav from "./auth-nav";
 
 const NavBar = () => {
-  const url = 'https://localhost:3000/'
+  const url = process.env.REACT_APP_AUTH0_CLIENT_URL;
   return (
     <div className="nav-container mb-3">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
