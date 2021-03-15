@@ -94,19 +94,50 @@ function Events()
   else if(!isAuthenticated)
   {
     return (
-      <div>
-        <div class="input-group rounded">
-          <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-          aria-describedby="search-addon" onChange = {e=>setSearch(e.target.value)} />
-        <span class="input-group-text border-0" id="search-addon">
-        <i class="fas fa-search"></i>
-      </span>
-      </div>
-        {filteredEvents.map((event) => 
+      <div className = "events-list-page">
+        <h2>Events</h2>
+        <div className = "search-bar-container">
+        <input
+          className="form-control"
+          type="text"
+          placeholder="Search keywords..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+         <select
+          className="form-control"
+          placeholder="Event Type"
+          value={type}
+          onChange={(e) => {
+            setType(e.target.value);
+          }}
+        >
+          <option type = "all">
+            all
+          </option>
+          
+        <option type = "workshop">
+          workshop
+        </option>  
+        <option type = "tech_talk">
+          tech_talk
+        </option> 
+        <option type = "activity">
+          activity
+        </option> 
+        </select>
+        </div>
+        <div className = "card">
+        {filteredEvents.length > 0 ?
+        filteredEvents.map((event) =>
           event.permission==='public'?
-          <Event event = {event}/> :
-          <p>No results </p>
-        )}
+          <Event className = "card" event = {event}/> 
+          :
+          null
+        )
+        : <p>No results </p>
+        }
+        </div>
       </div>
     );
   }
