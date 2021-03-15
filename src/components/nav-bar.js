@@ -4,14 +4,15 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import AuthNav from "./auth-nav";
 
 const NavBar = () => {
+  const url = 'https://htn-frontend-umar.herokuapp.com/'
   return (
     <div className="nav-container mb-3">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="http://localhost:3000/">Hack the North</a>
+        <a class="navbar-brand" href={uri}>Hack the North</a>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-      <a class="nav-item nav-link" href="http://localhost:3000/events">Events</a>
-      <a class="nav-item nav-link" href="http://localhost:3000/profile">Profile</a>
+      <a class="nav-item nav-link" href={`${url}/events`}>Events</a>
+      <a class="nav-item nav-link" href={`${url}/profile`}>Profile</a>
     </div>
   </div>
     <AuthNav />
