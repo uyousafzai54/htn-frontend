@@ -33,12 +33,13 @@ function Events()
     setFilteredEvents (
       events.filter(event => {
         return  (
+        (type === event.event_type  || type === "all") &&
         event.name.toLowerCase().includes(search.toLowerCase()) || 
         event.description.toLowerCase().includes(search.toLowerCase()) ||
         event.speakers.some((speaker) => {
           return speaker.name.toLowerCase().includes(search.toLowerCase())
         })
-      ) && (type === "all" || event.event_type === type)
+      ) 
       }
     )) 
   }, [search, events, type])
