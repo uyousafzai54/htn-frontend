@@ -37,7 +37,7 @@ function Events()
         event.speakers.some((speaker) => {
           return speaker.name.toLowerCase().includes(search.toLowerCase())
         })
-        ) && ((event.permission==='private'&&isAuthenticated)||((event.permission==='public'&&!isAuthenticated)))
+        ) && ((event.permission==='private'&&isAuthenticated)||((event.permission==='public'&&!isAuthenticated))||(event.permission==='public'&&isAuthenticated))
       ) 
       }
     )) 
@@ -71,7 +71,6 @@ function Events()
             setType(e.target.value);
           }}
         >
-        
           <option type = "all">
             all
           </option>
