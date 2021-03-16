@@ -1,10 +1,11 @@
-import React, { Component, useState, useEffect} from 'react';
+import React, { Component, useState, useEffect, useContext} from 'react';
 import NavBar from './nav-bar';
 import { useAuth0 } from "@auth0/auth0-react";
 import Loading from './loading';
 import Event from './Event'
 import './Search.css';
 import './events.css'
+import {HeroContext} from './Context';
 
 function Events()
 {
@@ -15,13 +16,14 @@ function Events()
   const [filteredEvents, setFilteredEvents] = useState([]); 
   const [type, setType] = useState('all'); 
 
-
   useEffect(() => {
     fetch('https://api.hackthenorth.com/v3/graphql?query={ events { id name event_type permission start_time end_time description speakers { name profile_pic } public_url private_url related_events } }')
       .then((response) => response.json())
       .then((jsonResp) => {
         setEvents(jsonResp.data.events.sort((a, b) => a.start_time < b.start_time ? -1 : 1));
-        console.log(JSON.stringify(jsonResp.data.events));
+        localStorage.setItem('allEvents', JSON.stringify(jsonResp.data.events));
+        console.log(localStorage.getItem("allEvents"));
+        //console.log(JSON.stringify(jsonResp.data.events));
         
       })
       .catch((error) => console.error(error))

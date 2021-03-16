@@ -5,6 +5,8 @@ import Events from "./components/Events";
 import Profile from "./components/Profile";
 import Loading from './components/loading';
 import { useAuth0 } from "@auth0/auth0-react";
+import randomPage from './components/randomPage';
+import EventPage from './components/EventPage';
 function App()
 {
   const {isAuthenticated, isLoading} = useAuth0();
@@ -17,8 +19,9 @@ function App()
       <div className = "App">
         <Navbar/>
         <br/>
-        <Route path='/events' component={Events} />
-        <Route path='/profile' component={Profile} />
+        <Route path='/events/:id' exact component={EventPage} />
+        <Route path='/events' exact component={Events} />
+        <Route path='/profile' exact component={Profile} />
       </div>
     </Router>
   ); 
