@@ -37,7 +37,7 @@ function Events()
         event.speakers.some((speaker) => {
           return speaker.name.toLowerCase().includes(search.toLowerCase())
         })
-        )
+        ) && ((event.permission==='private'&&isAuthenticated)||((event.permission==='public'&&!isAuthenticated)))
       ) 
       }
     )) 
