@@ -1,11 +1,7 @@
 import React, { Component, useState, useEffect, useContext} from 'react';
-import NavBar from './nav-bar';
 import { useAuth0 } from "@auth0/auth0-react";
-import Loading from './loading';
-import Event from './Event'
-import './Search.css';
-import './events.css'
-import {HeroContext} from './Context';
+import Event from '../components/Event'
+import '../styles/App.css';
 
 function Events()
 {
@@ -13,6 +9,7 @@ function Events()
   console.log(isAuthenticated);
   const [events, setEvents] = useState([]); 
   const [search, setSearch] = useState('');
+  const [loading, isAPILoading] = useState(true); 
   const [filteredEvents, setFilteredEvents] = useState([]); 
   const [type, setType] = useState('all'); 
 
@@ -28,7 +25,7 @@ function Events()
       })
       .catch((error) => console.error(error))
       .finally(() => {
-        //this.setState({ isLoading: false }); 
+        isAPILoading(false); 
       });
   }, [])
 
@@ -46,16 +43,23 @@ function Events()
     )) 
   }, [search, events, type])
   console.log(search);
+  if(loading)
+  {
+    return <div><p>Loading...</p></div>
+  }
   if(isAuthenticated)
   {
     return (
       <div className = "events-list-page">
-        <h2>Events</h2>
+        <h2>Hack the North: Events</h2>
+        <div>
         <div className = "search-bar-container">
+        <form className = "form-inline">
         <input
-          className="form-control"
+          className="form-control rounded"
+          id = "form1"
           type="text"
-          placeholder="Search keywords..."
+          placeholder="Search events..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -67,6 +71,7 @@ function Events()
             setType(e.target.value);
           }}
         >
+        
           <option type = "all">
             all
           </option>
@@ -81,13 +86,16 @@ function Events()
           activity
         </option> 
         </select>
+        </form>
         </div>
-        <div className = "card">
+      
+        </div>
+        <div>
         {filteredEvents.length > 0 ?
         filteredEvents.map((event) => 
           <Event className = "card" event = {event}/> 
         )
-        : <p>No results </p>
+        : <p>No results! </p>
         }
         </div>
       </div>
@@ -97,7 +105,7 @@ function Events()
   {
     return (
       <div className = "events-list-page">
-        <h2>Events</h2>
+        <h2>Hack the North: Events</h2>
         <div className = "search-bar-container">
         <input
           className="form-control"
@@ -137,7 +145,7 @@ function Events()
           :
           null
         )
-        : <p>No results </p>
+        : <p>No results! </p>
         }
         </div>
       </div>

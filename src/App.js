@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Navbar from "./components/nav-bar"; 
-import Events from "./components/Events";
-import Profile from "./components/Profile";
+import Events from "./pages/Events";
+import Profile from "./pages/Profile";
 import Loading from './components/loading';
 import { useAuth0 } from "@auth0/auth0-react";
-import randomPage from './components/randomPage';
-import EventPage from './components/EventPage';
+import PrivateEventPage from './pages/PrivateEventPage';
+import PublicEventPage from './pages/PublicEventPage';
 function App()
 {
   const {isAuthenticated, isLoading} = useAuth0();
@@ -19,7 +19,8 @@ function App()
       <div className = "App">
         <Navbar/>
         <br/>
-        <Route path='/events/:id' exact component={EventPage} />
+        <Route path='/events/public/:id' exact component={PublicEventPage} />
+        <Route path='/events/private/:id' exact component={PrivateEventPage} />
         <Route path='/events' exact component={Events} />
         <Route path='/profile' exact component={Profile} />
       </div>

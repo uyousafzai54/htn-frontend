@@ -1,0 +1,146 @@
+.App {
+  text-align: center;
+}
+.event-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.event-page h3 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.event-page h2 {
+  margin-bottom: 1.5rem;
+}
+
+.event-info-container {
+  margin-top: 1rem;
+  text-align: left;
+
+}
+
+.event-info-container p {
+  margin: 0;
+}
+.image {
+  position:relative;
+  float:right;
+  border-radius: 50%;
+  max-height: 200px;
+  max-width: 200px;
+  align-items: right;
+  text-align: right;
+  justify-content: right;
+  margin-bottom: 0.2rem;
+  top: -16px;
+  left: 50px;
+}
+
+.event-description {
+  margin-top: 1rem;
+}
+.events-related{
+  align-items: center;
+justify-content: center;
+text-align: center;
+}
+
+@media (min-width: 768px) {
+  .event-page {
+    padding: 0 10rem;
+  }
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.events-list-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-bar-container {
+  margin: 2rem 0;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  display: inline;
+}
+
+.drop-down-container {
+  margin: 2rem 0;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  display: inline;
+  float: right;
+}
+
+.event-list-page .link {
+  margin: 1rem 0;
+}
+
+.event-list-page p {
+  margin: 1rem;
+}
+.descrip {
+  max-width: fit-content;
+}
+.card {
+  text-align:left;
+  width: 50%;
+margin: 0 auto;
+
+}
+
+.pfp
+{
+border-radius: 50%;
+max-height: 10%;
+max-width: 10%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.center {
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
