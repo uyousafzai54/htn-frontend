@@ -110,7 +110,7 @@ function Events()
         <input
           className="form-control"
           type="text"
-          placeholder="Search keywords..."
+          placeholder="Search events..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -137,7 +137,7 @@ function Events()
         </option> 
         </select>
         </div>
-        <div className = "card">
+        <div>
         {filteredEvents.length > 0 ?
         filteredEvents.map((event) =>
           event.permission==='public'?
