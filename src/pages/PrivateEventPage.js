@@ -10,14 +10,6 @@ const {id} =  props.match.params;
 const {isAuthenticated, isLoading} = useAuth0();
 const [isAPILoading, setLoading] = useState('true'); 
 
-const options = {
-  year: 'numeric',
-  month: 'short',
-  day: 'numeric',
-  weekday: 'short',
-  hour: 'numeric',
-  minute: 'numeric',
-};
 const user = JSON.parse(localStorage.getItem('allEvents')||null); 
 console.log(user); 
 if(isLoading)
@@ -30,9 +22,9 @@ const result = user.filter((element) => {
   return event.related_events.includes(element.id); 
 })
 return(
-<div className = "event-page">
+<div className = "event">
     <h2>{event.name}</h2>
-    <div className="event-info-container">
+    <div className="event-info">
         {event.speakers.length > 0 && 
               <img className = "image" src={event.speakers[0].profile_pic} ></img> 
         }
@@ -55,16 +47,14 @@ return(
         {
         (isAuthenticated && event.private_url!==undefined) &&
         <a href={event.private_url}>{event.private_url}</a>
-
         }
         </p>
-        
       </div>
-      <p className="event-description">{event.description}</p> 
+      <p className="event-descrip">{event.description}</p> 
     
 
-    <div >
-    <h3>Related Events: </h3>
+    <div>
+    <h2>Related Events: </h2>
     <div className = "events-related">
     {result.length!==0 ?
     result.map((element) => {

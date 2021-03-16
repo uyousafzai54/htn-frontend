@@ -1,29 +1,33 @@
 .App {
   text-align: center;
 }
-.event-page {
+.event {
+  font-family: Trebuchet MS, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.event-page h3 {
+.event h3 {
   text-align: center;
   font-weight: bold;
+  font-family: Trebuchet MS, sans-serif
 }
 
-.event-page h2 {
+.event h2 {
   margin-bottom: 1.5rem;
+  font-family: Trebuchet MS, sans-serif
 }
 
-.event-info-container {
+.event-info {
   margin-top: 1rem;
   text-align: left;
+  font-family: Trebuchet MS, sans-serif
 
 }
 
-.event-info-container p {
+.event-info p {
   margin: 0;
 }
 .image {
@@ -37,21 +41,24 @@
   justify-content: right;
   margin-bottom: 0.2rem;
   top: -16px;
-  left: 50px;
+  left: 70px;
 }
 
-.event-description {
+.event-descrip {
   margin-top: 1rem;
+  text-align: left;
+  font-family: Trebuchet MS, sans-serif
 }
 .events-related{
   align-items: center;
 justify-content: center;
 text-align: center;
+font-family: Trebuchet MS, sans-serif
 }
 
 @media (min-width: 768px) {
-  .event-page {
-    padding: 0 10rem;
+  .event {
+    padding: 0 5rem;
   }
 }
 .App-logo {
@@ -75,14 +82,6 @@ text-align: center;
   display: inline;
 }
 
-.drop-down-container {
-  margin: 2rem 0;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  display: inline;
-  float: right;
-}
-
 .event-list-page .link {
   margin: 1rem 0;
 }
@@ -95,7 +94,7 @@ text-align: center;
 }
 .card {
   text-align:left;
-  width: 50%;
+  width: 70%;
 margin: 0 auto;
 
 }

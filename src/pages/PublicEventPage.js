@@ -28,23 +28,25 @@ const result = user.filter((element) => {
 })
 
 return(
-<div className = "event-page">
+<div className = "event">
     <h2>{event.name}</h2>
-    <div className="event-info-container">
-    {event.speakers.length > 0 && 
+    <div className="event-info">
+        {event.speakers.length > 0 && 
               <img className = "image" src={event.speakers[0].profile_pic} ></img> 
         }
         <p>
           <b>Event Type:  </b> {event.event_type}
         </p>
+        
         {console.log(event.speakers)}
         {event.speakers.length!==0 &&
           <p>
           <b>Speaker: </b> {event.speakers[0].name}
           </p>
         }
+        
         <p>
-          <b>Date: </b>
+          <b>When: </b>
           {new Date(event.start_time).toLocaleDateString('en', {weekday: 'long', year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric'})} to {new Date(event.end_time).toLocaleDateString('en', {hour: 'numeric', minute: 'numeric'} ).substring(10)}
         </p>
         <p><b>Learn More: </b>
@@ -55,9 +57,11 @@ return(
         }
         </p>
       </div>
-      <p className="event-description">{event.description}</p> 
-    <h3>Related Events: </h3>
+      <p className="event-descrip">{event.description}</p> 
+    
 
+    <div>
+    <h2>Related Events: </h2>
     <div className = "events-related">
     {result.length!==0 ?
     
@@ -69,6 +73,8 @@ return(
       )
       :<p>No results!</p>
     }
+    </div>
+    
     </div>
     
 </div>

@@ -19,8 +19,6 @@ function Events()
       .then((jsonResp) => {
         setEvents(jsonResp.data.events.sort((a, b) => a.start_time < b.start_time ? -1 : 1));
         localStorage.setItem('allEvents', JSON.stringify(jsonResp.data.events));
-        console.log(localStorage.getItem("allEvents"));
-        //console.log(JSON.stringify(jsonResp.data.events));
         
       })
       .catch((error) => console.error(error))
@@ -34,17 +32,18 @@ function Events()
       events.filter(event => {
         return  (
         (type === event.event_type  || type === "all") &&
-        event.name.toLowerCase().includes(search.toLowerCase()) || 
+        (event.name.toLowerCase().includes(search.toLowerCase()) || 
         event.description.toLowerCase().includes(search.toLowerCase()) ||
         event.speakers.some((speaker) => {
           return speaker.name.toLowerCase().includes(search.toLowerCase())
         })
+        )
       ) 
       }
     )) 
   }, [search, events, type])
   console.log(search);
-  if(loading)
+  if(loading||isLoading)
   {
     return <div><p>Loading...</p></div>
   }
