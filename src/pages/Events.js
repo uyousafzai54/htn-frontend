@@ -106,9 +106,12 @@ function Events()
     return (
       <div className = "events-list-page">
         <h2>Hack the North: Events</h2>
+        <div>
         <div className = "search-bar-container">
+        <form className = "form-inline">
         <input
-          className="form-control"
+          className="form-control rounded"
+          id = "form1"
           type="text"
           placeholder="Search events..."
           value={search}
@@ -122,6 +125,7 @@ function Events()
             setType(e.target.value);
           }}
         >
+        
           <option type = "all">
             all
           </option>
@@ -136,6 +140,9 @@ function Events()
           activity
         </option> 
         </select>
+        </form>
+        </div>
+      
         </div>
         <div>
         {filteredEvents.length > 0 ?
