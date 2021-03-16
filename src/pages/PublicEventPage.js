@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import '../styles/App.css';
 import Loading from "../components/loading.js";
-import {Link} from 'react-router-dom'; 
+import {Link, Redirect} from 'react-router-dom'; 
 
 
 function PublicEventPage(props) {
@@ -10,17 +10,23 @@ const {id} =  props.match.params;
 const {isAuthenticated, isLoading} = useAuth0();
 const [isAPILoading, setLoading] = useState('true'); 
 
-const user = JSON.parse(localStorage.getItem('allEvents')||null); 
+var user = JSON.parse(localStorage.getItem('allEvents')||null); 
 console.log(user); 
+console.log(user.find(x=>x.id==id).permission==='private');
 if(isLoading)
 {
   return <Loading/>
 }
+else if(user.find(x=>x.id==id).permission==='private')
+{
+  return <Redirect to = {`/events/private/${id}`}></Redirect>
+}
 else {
 const event = user.find(x => x.id==id); 
 const result = user.filter((element) => {
-  return event.related_events.includes(element.id); 
+  return (event.related_events.includes(element.id));
 })
+
 return(
 <div className = "event-page">
     <h2>{event.name}</h2>
