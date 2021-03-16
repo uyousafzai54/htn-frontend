@@ -53,9 +53,9 @@ return(
         </p>
         <p><b>Learn More: </b>
         {
-        (isAuthenticated && event.private_url!==undefined)
-        ? <a href={event.private_url}>{event.private_url}</a>
-        : <a href={event.public_url}>{event.public_url}</a>
+        (isAuthenticated && event.private_url!==undefined) &&
+        <a href={event.private_url}>{event.private_url}</a>
+
         }
         </p>
         
@@ -68,9 +68,7 @@ return(
     <div className = "events-related">
     {result.length!==0 ?
     result.map((element) => {
-        return element.permission==='private'
-        ? <p><Link to = {{pathname: `/events/private/${element.id}`}}>{element.name}</Link></p>
-        : <p><Link to = {{pathname: `/events/public/${element.id}`}}>{element.name}</Link></p>
+        return <p><Link to = {{pathname: `/events/private/${element.id}`}}>{element.name}</Link></p>
       }
       )
       :<p>No results!</p>
