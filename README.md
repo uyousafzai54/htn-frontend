@@ -47,15 +47,18 @@ I would first focus on improving the UI by implementing a consistent styling the
 
 ## Considerations
 
-\*\*Is the code written and documented such that a developer who is unfamiliar with the code can understand it relatively quickly?
+**Is the code written and documented such that a developer who is unfamiliar with the code can understand it relatively quickly?
 
 While writing my code, I organized it in such a way that any developer would be able to look at the different files and understand how the entire project is structured. For example, I stored components, pages, styles and assets in separate folders and gave each file descriptive names in order for another developer to understand their purpose. I also created multiple smaller, reusable components such as `nav-bar.js` and `authentication-button.js` in order to shorten the amount of code I wrote.
 
-\*\*Is your project structured in a way that is extensible and scalable? For example, if we wanted to add more events or event types, would it be possible to do so easily?
+**Is your project structured in a way that is extensible and scalable? For example, if we wanted to add more events or event types, would it be possible to do so easily?
+
 When creating my project, I kept in mind scalability as I didn't want to write code that would cause the app to be inefficient if for example more events were added. This is why I decided to cache all the events returned by the HTN API in localStorage. If in the future the HTN API returned more information, this could simply be handled by editing for the `Event.js` component which returns a card with information to include extra fields. By breaking down the structure of the code into smaller components, I ensured that in the future these components could be reused with other new components to implement new features without making the app inefficient.
 
-\*\*Are you following best practices to make sure the project is maintainable if development were to continue on it?
+**Are you following best practices to make sure the project is maintainable if development were to continue on it?
+
 I made sure to follow best practices my organizing my files in specific folders, hiding my environment variables in a dotenv file, implementing proper security with Auth0 and breaking the UI into multiple different reusable components.
 
-\*\*Is the styling and appearance of your application consistent and appealing?
+**Is the styling and appearance of your application consistent and appealing?
+
 While creating this app, I made sure to keep the styling appealing but minimal. This was to ensure that if in the future development were to continue on it, the app could be easily styled by UI designers according to the themes and styles used by Hack the North without having to replace the old styling. I also saved all the styling in one place so that it could be easily referenced in the future.
