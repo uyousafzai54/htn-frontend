@@ -19,11 +19,11 @@ When I first decided to create this project, I wanted to implement as much of th
 
 ## Tools
 
-For the tools, I decided to use React as it is a very popular frontend framework that I am most comfortable with and is increadibly versatile in increasting extensive and interactive UIs. React's simplicity, great performance, reusable components and the ability to integrate numerous libraries make it a great choice for creating web apps. \
+For the tools, I decided to use React as it is a very popular frontend framework that I am most comfortable with and is increadibly versatile in increasting extensive and interactive UIs. React's simplicity, great performance, reusable components and the ability to integrate numerous libraries make it a great choice for creating web apps.
 
-Some of the others libraries I decided to use include Auth0, React-Router, LocalStorage, Bootstrap. I used Auth0 for login as without Auth0, I would have to implement user login and registration with JWT authentication and create a server to store users in a database. This is usually done in the backend of a project and since this is a frontend challenge, I instead decided to use Auth0. Auth0 takes care of the entire login and registration process by allowing users to either sign up or login in with other social accounts (such as Google or Facebook). With Auth0 you can also easily implement protected routes for your apps to check if a user is logged in before private pages. \
+Some of the others libraries I decided to use include Auth0, React-Router, LocalStorage, Bootstrap. I used Auth0 for login as without Auth0, I would have to implement user login and registration with JWT authentication and create a server to store users in a database. This is usually done in the backend of a project and since this is a frontend challenge, I instead decided to use Auth0. Auth0 takes care of the entire login and registration process by allowing users to either sign up or login in with other social accounts (such as Google or Facebook). With Auth0 you can also easily implement protected routes for your apps to check if a user is logged in before private pages.
 
-I used React-Router to manage navagating between different pages on my app, LocalStorage to save the list of events fetched from the HTN API and Bootstrap to use their prestyled navbar, card, search bar and dropdown menu components. \
+I used React-Router to manage navagating between different pages on my app, LocalStorage to save the list of events fetched from the HTN API and Bootstrap to use their prestyled navbar, card, search bar and dropdown menu components.
 
 ## Problems
 
