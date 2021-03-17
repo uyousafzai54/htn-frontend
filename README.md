@@ -1,6 +1,11 @@
-# Getting Started with Create React App
+# Hack the North 2021 Frontend Challenge - Umar Yousafzai
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hi! I'm Umar and this is my submission for Hack the North 2021 Frontend Challenge. To view the project, visit https://htn-frontend-umar.herokuapp.com/ or clone this repo as instructed below.
+
+## How to Run the Application
+
+1. Install Node.js from https://nodejs.org/en/ if you don't have it installed.
+2. Clone the project by running `
 
 ## Available Scripts
 
