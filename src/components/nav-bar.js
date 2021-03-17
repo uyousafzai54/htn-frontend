@@ -8,7 +8,8 @@ const NavBar = () => {
   const url = process.env.REACT_APP_AUTH0_CLIENT_URL;
   return (
     <div className="nav-container mb-3">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand navbar-light bg-light">
+        
         <a class="navbar-brand" href={url}>
           <img src = {logo} width = "30" height = "30" alt = ""></img>
         </a>
