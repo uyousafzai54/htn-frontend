@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import Navbar from "./components/nav-bar"; 
 import Events from "./pages/Events";
 import Profile from "./pages/Profile";
@@ -19,6 +19,7 @@ function App()
       <div className = "App">
         <Navbar/>
         <br/>
+        <Redirect from="/" to="/events" />
         <Route path='/events/public/:id' exact component={PublicEventPage} />
         <Route path='/events/private/:id' exact component={PrivateEventPage} />
         <Route path='/events' exact component={Events} />
