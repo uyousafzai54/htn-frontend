@@ -1,6 +1,6 @@
-# Hack the North 2021 Frontend Challenge - Umar Yousafzai
+# Hack the North 2022 Frontend Challenge - Umar Yousafzai
 
-Hi! I'm Umar and this is my submission for Hack the North 2021 Frontend Challenge. To view the project, visit https://htn-frontend-umar.herokuapp.com/events or clone this repo as instructed below.
+Hi! I'm Umar and this is my submission for Hack the North 2022 Frontend Challenge. To view the project, visit https://htn-frontend-umar.herokuapp.com/events or clone this repo as instructed below.
 
 ## How to Run the Application
 
