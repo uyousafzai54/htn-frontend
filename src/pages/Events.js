@@ -14,12 +14,11 @@ function Events()
   const [type, setType] = useState('all'); 
 
   useEffect(() => {
-    fetch('https://api.hackthenorth.com/v3/graphql?query={ events { id name event_type permission start_time end_time description speakers { name profile_pic } public_url private_url related_events } }')
+    fetch('https://api.hackthenorth.com/v3/events')
       .then((response) => response.json())
       .then((jsonResp) => {
-        setEvents(jsonResp.data.events.sort((a, b) => a.start_time < b.start_time ? -1 : 1));
-        localStorage.setItem('allEvents', JSON.stringify(jsonResp.data.events));
-        
+        setEvents(jsonResp.sort((a, b) => a.start_time < b.start_time ? -1 : 1));
+        localStorage.setItem('allEvents', JSON.stringify(jsonResp));
       })
       .catch((error) => console.error(error))
       .finally(() => {

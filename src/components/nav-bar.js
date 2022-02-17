@@ -6,17 +6,18 @@ import logo from '../assets/htn.ico';
 
 const NavBar = () => {
   const url = process.env.REACT_APP_AUTH0_CLIENT_URL;
+  console.log(url)
   return (
     <div className="nav-container mb-3">
-      <nav class="navbar navbar-expand navbar-light bg-light">
+      <nav className="navbar navbar-expand navbar-light bg-light">
         
-        <a class="navbar-brand" href={url}>
+        <a className="navbar-brand" href={url}>
           <img src = {logo} width = "30" height = "30" alt = ""></img>
         </a>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-      <a class="nav-item nav-link" href={`${url}events`}>Events</a>
-      <a class="nav-item nav-link" href={`${url}profile`}>Profile</a>
+      <a className="nav-item nav-link" href={`${url}events`}>Events</a>
+      <a className="nav-item nav-link" href={`${url}profile`}>Profile</a>
     </div>
   </div>
     <AuthNav />
